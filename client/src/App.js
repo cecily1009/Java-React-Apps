@@ -1,13 +1,21 @@
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Fragment } from 'react';
+import Counter from './Components/Counter/Counter';
+import NavbarMenu from './Components/Layouts/NavbarMenu';
 import './App.css';
-import {Counter} from './Components/Counter/Counter';
 function App() {
   return (
-    <div className="App">
-      <h1>React Counter</h1>
+    <Router>
+      <Fragment>
+        <NavbarMenu />
+        <Switch>
+          <Route exact path = '/counter' component ={Counter}></Route>        
+        </Switch>
+      </Fragment>
       
-      <Counter />
-    </div>
+    </Router>
+
+    
     
   );
 }

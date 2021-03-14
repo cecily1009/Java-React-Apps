@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
 import './counter.css';
-export const Counter = () => {
+export default function Counter () {
     const [number, setNumber] = useState(0);
     
     return (
         
-        <div>
+        <div className = "counter-body">
             <h1>Counter</h1>
             <div className="btn-group">
                 <button className="btn btn-success" onClick={()=>setNumber(number+1)}>+1</button>
