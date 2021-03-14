@@ -6,12 +6,13 @@
 }
 
 .reset-btn {
-    margin-left: 125px;
-    margin-top: 10px;
-    ;
+    width: 320px;
+    height: 80px;
 }
 
-h1 {
+.number {
     margin-top: 20px;
     text-align: center;
+    font-size: 5.5rem;
+    font-weight: 800;
 }

@@ -13,8 +13,4 @@ describe('App', ()=>{
 
   });
 
-  it('should render h1 element correctly', ()=>{
-    const app = shallow(<App />)
-    expect(app.contains(<h1>ToDoList App</h1>)).toEqual(true);
-});
 })

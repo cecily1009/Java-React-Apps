@@ -22,7 +22,7 @@ export const Counter = () => {
                 <button className="btn btn-success" onClick={()=>setNumber(number-10)}>-10</button>
             </div>
             <div></div>
-            <h1>Number : {number}</h1>
+            <h1 className="number">{number}</h1>
             <button className="btn btn-danger reset-btn" onClick={()=>setNumber(0)}>Reset</button>
         </div>
     )
