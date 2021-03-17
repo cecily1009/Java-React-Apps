@@ -67,14 +67,24 @@
 }
 
 .list-body {
-    text-align: left;
+    text-align: center;
     font-size: 18px;
 }
 
-.list-body li {
-    margin-top: 10px;
+.list-body td,
+th {
+    padding: 6px;
 }
 
-.list-body li:nth-child(even) {
+.list-body tr:nth-child(even) {
     background-color: #ccc;
+}
+
+.logout-window {
+    position: absolute;
+    z-index: 99;
+    width: 10%;
+    height: 10%;
+    opacity: 0.8;
+    right: 1%;
 }
