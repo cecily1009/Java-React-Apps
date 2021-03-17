@@ -11,7 +11,7 @@ export default function NavbarMenu() {
                     <a className="nav-link" href="/counter">Counter App</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/todoapp">TodoList App</a>
+                    <a className="nav-link" href="/todoapp/login">TodoList App</a>
                 </li>
                 </ul>
    

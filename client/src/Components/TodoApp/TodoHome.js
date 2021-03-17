@@ -1,9 +1,10 @@
 import React from 'react'
-
-export default function TodoHome() {
+import {Link} from 'react-router-dom';
+export default function TodoHome({match}) {
     return (
-        <div>
-            Welcome to TodoHome~
+        <div className="todo-body">
+            <h1>Hello, {match.params.name}</h1>
+            <h4>Welcome back, you can manage your <Link to={`/todoapp/${match.params.name}/listtodo`} >todos</Link> .</h4>
         </div>
     )
 }

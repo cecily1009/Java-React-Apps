@@ -1,9 +1,8 @@
-import React, {useState} from 'react'
-import TodoHome from './TodoHome';
-export default function Login() {
+import React, {useState} from 'react';
+export default function Login({history}) {
    const [formData, setFormData] = useState({
-    username: '',
-    password: '',   
+    username: "",
+    password: "",   
     showsuccess:false,
     showfail:false
 });
@@ -15,21 +14,23 @@ export default function Login() {
         
     const loginClicked = (e) =>{
         e.preventDefault();
-        console.log("login clicked!");
         setFormData({isloggedin:true})
         if(username==='Guest01' && password==='1234567') {
             setFormData({showsuccess:true,showfail:false})
+            history.push(`/todoapp/welcome/${username}`)
         }else {
             setFormData({showsuccess:false, showfail:true})
         }
     }
 
-    if(showsuccess) {
-        return <TodoHome/>
-    }
+    
     return (
         <div className="login-body ">
-            
+            <div>
+                <h1>Todo List App</h1>
+                
+            </div>
+        
             {showsuccess&&<div className="logged-in">Login Successfully!</div> }
             {showfail&& <div className="login-fail">Invalid Credentials</div>}
             User Name: <input type="text" name = "username" value ={username} onChange={(e)=>onChange(e)}/> 
