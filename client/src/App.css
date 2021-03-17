@@ -65,3 +65,16 @@
 .login-body button {
     margin-top: 10px;
 }
+
+.list-body {
+    text-align: left;
+    font-size: 18px;
+}
+
+.list-body li {
+    margin-top: 10px;
+}
+
+.list-body li:nth-child(even) {
+    background-color: #ccc;
+}
