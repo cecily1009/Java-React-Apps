@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import Sidebar from './Sidebar';
 export default function ListTodos({match}) {
     
     const todos=[
@@ -9,11 +9,10 @@ export default function ListTodos({match}) {
         {id:4, description:'Health insurance application', completed:false, targetDate:new Date()},
     ]
     return (
-        
+        <>
+        <Sidebar user={match.params.name}/>
         <div className="todo-body">
-            <div className="logout-window">
-                <a href="/todoapp/login">Logout</a>
-            </div>
+            
            <h1>List of Todos for {match.params.name}</h1> 
            <table className="list-body">
                <thead>
@@ -38,5 +37,6 @@ export default function ListTodos({match}) {
            
            
         </div>
+        </>
     )
 }

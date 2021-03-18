@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
-export default function Login({history}) {
-   const [formData, setFormData] = useState({
+import AuthService from './AuthService.js';
+import TodoSidebar from './Sidebar';
+import PropTypes from 'prop-types';
+
+function TodoLogin({history}) {
+    const [formData, setFormData] = useState({
     username: "",
     password: "",   
     showsuccess:false,
@@ -14,6 +18,7 @@ export default function Login({history}) {
         
     const loginClicked = (e) =>{
         e.preventDefault();
+        AuthService.loginSuccessfully(username, password);
         setFormData({isloggedin:true})
         if(username==='Guest01' && password==='1234567') {
             setFormData({showsuccess:true,showfail:false})
@@ -22,9 +27,12 @@ export default function Login({history}) {
             setFormData({showsuccess:false, showfail:true})
         }
     }
-
     
     return (
+        <>
+        
+        <TodoSidebar user="undefined"/>
+        
         <div className="login-body ">
             <div>
                 <h1>Todo List App</h1>
@@ -38,5 +46,14 @@ export default function Login({history}) {
             <button className="btn btn-primary"  onClick={loginClicked}>Login</button>
             
         </div>
+        </>
     )
 }
+
+TodoLogin.propTypes = {
+    username:PropTypes.string.isRequired,
+    password:PropTypes.string.isRequired
+}
+
+export default TodoLogin
+
